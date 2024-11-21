@@ -4,7 +4,7 @@ from task1.models import Post
 
 # Создаём объекты
 post1 = Post.objects.create(title='Предпоследний пост', content='Содержание предпоследнего поста')
-post2 = Post.objects.create(title='Последний пост', content='Содержание последнего поста')
+post2 = Post.objects.create(title='Последний пост № 53', content='Содержание последнего поста № 53')
 
 # Получаем первый созданный объект
 post = Post.objects.first()
@@ -28,6 +28,8 @@ for post in all_posts:
 
 first_post = Post.objects.first()
 first_post.delete()
+filter_posts = Post.objects.filter(id=53)
+filter_posts.delete()
 
 ### Шаг 5: Фильтрация объектов
 # Фильтруем посты по дате публикации или автору:
@@ -39,8 +41,7 @@ posts_in_2024 = Post.objects.filter(created_at__year=2024)
 
 #### Пример фильтрации статей, созданных конкретным пользователем (например, администратором):
 
-admin_posts = Post.objects.filter(id=52)
+filter_posts = Post.objects.filter(id=52)
 count_posts = Post.objects.count()
-count_posts = Post.objects.len()
-
+len_posts = len(Post.objects.all())
 

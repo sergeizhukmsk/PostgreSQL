@@ -15,6 +15,7 @@ SECRET_KEY = 'django-insecure-u&0k)=$#v8bxgmb5vu3bb8xepmwk&k&p9ciq8gqu$!9b-gme4c
 
 # ПРЕДУПРЕЖДЕНИЕ ПО системе БЕЗОПАСНОСТИ: не запускайте программу с включенной отладкой в рабочей среде!
 DEBUG = True
+INTERNAL_IPS = ['127.0.0.1']
 
 #['localhost', '127.0.0.1']
 ALLOWED_HOSTS = []
@@ -29,6 +30,8 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'debug_toolbar',
+    'rest_framework',
     'django.contrib.staticfiles',
     'task1',  # Запускаемое приложение на Django
 ]
@@ -41,6 +44,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 ROOT_URLCONF = 'UrbanDjango19.urls'
